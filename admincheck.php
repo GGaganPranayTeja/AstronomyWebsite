@@ -8,7 +8,7 @@ $db=mysqli_select_db($conn,"astro");
 $check=mysqli_query($conn,"select count(*) from admin a where a.adminid='$user' and a.password='$pass' ");
 $row=mysqli_fetch_row($check);
 if($row[0]==1) {
-header('location:framea.html');
+header('location:users_list.php');
 } else {
 print "wong username or password";
 }

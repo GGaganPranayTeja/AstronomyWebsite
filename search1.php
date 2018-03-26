@@ -1,14 +1,34 @@
 <?php
 $a=$_POST["searchbox"];
-$conn=mysqli_connect("localhost","root","");
-$user=mysqli_real_escape_string($conn,$a);
-$db=mysqli_select_db($conn,"astro");
-$check=mysqli_query($conn,"select page from search a where a.page='$user');
-$row=mysqli_fetch_row($check);
-if(!empty($row)) {
-header('location:$row[0].html');
-} else {
-print " The data you are searching for is not present in the site.";
+switch ($a)
+{
+case 'star': header('location:star.html');
+         break;
+case 'planets': header('location:planmain.html');
+           break;
+case  'mercury':header('location:mer.html');
+break;
+case  'venus':header('location:ven.html');
+break;
+case  'earth':header('location:earth.html');
+break;
+case  'mars':header('location:mars.html');
+break;
+case  'jupiter':header('location:jup.html');
+break;
+case  'saturn':header('location:sat.html');
+break;
+case  'uranus':header('location:uran.html');
+break;
+case  'galaxy':header('location:GALAXY.html');
+break;
+case  'blackhole':header('location:blackholep.html');
+break;
+case  'satellites':header('location:nob.html');
+break;
+case  'space station':header('location:nob.html');
+break;
+ default: print "The data you are searching is not present in the site";
+break;
 }
 ?>
-
